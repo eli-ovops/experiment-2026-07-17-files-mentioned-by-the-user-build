@@ -1,0 +1,96 @@
+schema_version: "1.0"
+status: "draft"
+site_id: "mindloop-landing-l0"
+project: "Mindloop landing page"
+confirmed_by: "user brief"
+confirmed_at: "2026-07-17"
+no_secret_values: true
+
+server:
+  reference: "not-configured-local-demo"
+  owner: "待确认"
+
+environments:
+  preview:
+    enabled: false
+    public_url: null
+    admin_path: null
+  production:
+    enabled: false
+    public_url: null
+    admin_path: null
+
+repository:
+  repo_url: "待确认"
+  approved_branch: "eli"
+  production_branch: "main"
+  commit_sha_required: true
+
+architecture: "static"
+
+toolchain:
+  node: ">=20.9.0"
+  pnpm_major: "10"
+  package_manager: "pnpm@10.13.1"
+  lockfile: "pnpm-lock.yaml"
+  payload_version: null
+
+runtime:
+  app_port_reference: "vite-local"
+  health_port_reference: null
+
+deployment:
+  call_carrier: "local"
+  forced_command_reference: null
+  allowed_modes: ["local-build-only"]
+  guide_reference: "README.md"
+  production_approval_required: true
+  authorization_reference: null
+  deploy_owner: null
+  validate_required: true
+  status_required: true
+
+storage:
+  code_reference: "local-project"
+  releases_reference: "not-configured"
+  database_reference: "not-applicable-l0"
+  media_reference: "public-local-assets"
+
+database:
+  type: "other"
+  credential_secret_ref: null
+  business_data_in_file: false
+
+media:
+  credential_secret_ref: null
+  managed_separately_from_code: true
+
+roles:
+  owner: "user"
+  developer: "Codex execution thread"
+  server_owner: "待确认"
+
+migration:
+  required: false
+  required_for_localization: true
+  procedure_reference: null
+  production_approval_required: true
+
+backup:
+  procedure_reference: null
+  database_and_media_separate: true
+  restore_rehearsal_required: false
+
+release_retention:
+  policy_reference: null
+  previous_accepted_release_required: false
+
+health_checks:
+  public_page: "local browser smoke test"
+  application: "vite preview"
+  admin: null
+  api: null
+
+rollback:
+  procedure_reference: "rebuild from source"
+  explicit_authorization_required: true
